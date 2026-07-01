@@ -46,3 +46,12 @@ body {
   background: var(--color-white);
   font-family: var(--font-body), sans-serif;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
