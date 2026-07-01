@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary */
+  --color-brand-black: #252122;
+  --color-graphite: #3a3436;
+  --color-brand-blue: #0a47c9;
+  --color-pro-blue: #3e7fe8;
+  --color-sky-blue: #6fafea;
+  --color-tech-cyan: #3ac8d5;
+  --color-bright-aqua: #67dce4;
+  --color-white: #ffffff;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(to right, #0a47c9, #3e7fe8, #3ac8d5);
+  --gradient-dark: linear-gradient(to right, #252122, #3a3436);
+  --gradient-hero: linear-gradient(135deg, #252122, #0a47c9, #3ac8d5);
+
+  /* Neutrals */
+  --neutral-900: #111111;
+  --neutral-700: #333333;
+  --neutral-500: #707070;
+  --neutral-200: #d9d9d9;
+  --neutral-50: #f5f7fa;
+
+  /* Semantic */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3e7fe8;
+
+  /* Typography colors */
+  --text-primary: #252122;
+  --text-secondary: #5f6368;
+  --text-caption: #8e949a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--color-white);
+  font-family: var(--font-body), sans-serif;
+}
