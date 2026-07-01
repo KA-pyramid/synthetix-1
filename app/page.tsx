@@ -16,9 +16,16 @@ import {
   Quote,
   ChevronDown,
   Menu,
+  Search,
+  Network,
+  LayoutGrid,
+  Hammer,
+  ShieldCheck,
+  Scale,
 } from "lucide-react";
 import RainingLettersHero from "@/components/ui/modern-animated-hero-section";
 import { SolutionsTabs } from "@/components/ui/feature-tabs";
+import { RadialOrbitalTimeline } from "@/components/ui/radial-orbital-timeline";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -65,28 +72,52 @@ const PLATFORM_CAPABILITIES = [
 
 const PIPELINE_STAGES = [
   {
-    name: "Discover",
-    body: "Agents crawl the full estate including application code, IaC, network topology, integrations, and data schemas, building a verified inventory before a single line of migration code is written.",
+    id: 1,
+    title: "Discover",
+    icon: Search,
+    content:
+      "Agents crawl the full estate including application code, IaC, network topology, integrations, and data schemas, building a verified inventory before a single line of migration code is written.",
+    relatedIds: [2],
   },
   {
-    name: "Analyze",
-    body: "Synthetix constructs a path-level knowledge graph with confidence scoring across every system dependency, concentration risk, and regulatory touchpoint.",
+    id: 2,
+    title: "Analyze",
+    icon: Network,
+    content:
+      "Synthetix constructs a path-level knowledge graph with confidence scoring across every system dependency, concentration risk, and regulatory touchpoint.",
+    relatedIds: [1, 3],
   },
   {
-    name: "Architect",
-    body: "Target-state architecture is generated from verified estate intelligence, infrastructure constraints, and business intent. Risk-adjusted delivery wave sequencing your PMO can present to the steering committee.",
+    id: 3,
+    title: "Architect",
+    icon: LayoutGrid,
+    content:
+      "Target-state architecture is generated from verified estate intelligence, infrastructure constraints, and business intent. Risk-adjusted delivery wave sequencing your PMO can present to the steering committee.",
+    relatedIds: [2, 4],
   },
   {
-    name: "Build",
-    body: "Specialist generation agents execute migration in parallel waves. Each unit is reviewed by peer agents before it advances, with full module-level state tracking in Conductor.",
+    id: 4,
+    title: "Build",
+    icon: Hammer,
+    content:
+      "Specialist generation agents execute migration in parallel waves. Each unit is reviewed by peer agents before it advances, with full module-level state tracking in Conductor.",
+    relatedIds: [3, 5],
   },
   {
-    name: "Verify",
-    body: "The Examiner agent generates and runs tests across units, integration, and contract surfaces. Coverage gating prevents promotion until quality thresholds are met.",
+    id: 5,
+    title: "Verify",
+    icon: ShieldCheck,
+    content:
+      "The Examiner agent generates and runs tests across units, integration, and contract surfaces. Coverage gating prevents promotion until quality thresholds are met.",
+    relatedIds: [4, 6],
   },
   {
-    name: "Govern",
-    body: "The Gatekeeper agent classifies every change across four tiers, enforces policy, signs evidence, and records a complete, audit-ready decision trail.",
+    id: 6,
+    title: "Govern",
+    icon: Scale,
+    content:
+      "The Gatekeeper agent classifies every change across four tiers, enforces policy, signs evidence, and records a complete, audit-ready decision trail.",
+    relatedIds: [5],
   },
 ];
 
@@ -613,33 +644,11 @@ function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-14 flex gap-6 overflow-x-auto pb-4 md:block md:overflow-visible md:pb-0">
-          {PIPELINE_STAGES.map((stage, i) => (
-            <div
-              key={stage.name}
-              className="relative flex min-w-[260px] gap-6 pb-10 last:pb-0 md:min-w-0"
-            >
-              <div className="flex flex-col items-center">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue font-display text-sm font-semibold text-white">
-                  {i + 1}
-                </div>
-                {i < PIPELINE_STAGES.length - 1 && (
-                  <div className="mt-2 hidden w-px flex-1 bg-neutral-200 md:block" />
-                )}
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-brand-black">
-                  {stage.name}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-[--text-secondary]">
-                  {stage.body}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="mt-14">
+          <RadialOrbitalTimeline items={PIPELINE_STAGES} />
         </div>
 
-        <div className="mt-6 text-center md:text-left md:pl-16">
+        <div className="mt-6 text-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 font-body text-sm font-semibold text-brand-blue"
