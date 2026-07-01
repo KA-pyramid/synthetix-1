@@ -8,22 +8,20 @@ import { CTABand } from "@/components/sections/shared/CTABand";
 import { getGovernanceContent } from "@/lib/content/governance";
 
 export default function GovernancePage() {
-  const { hero, hitl, policy, provenance, security, deployment } = getGovernanceContent();
+  const { hero, hitl, policy, provenance, security, deployment, cta } = getGovernanceContent();
 
   return (
     <main>
       <GovernanceHero hero={hero} />
       <HITLSection title={hitl.title} body={hitl.body} modes={hitl.modes} />
       <PolicyGatesSection title={policy.title} body={policy.body} classes={policy.classes} />
-      <ProvenanceSection title={provenance.title} body={provenance.body} />
-      <SecurityComplianceSection title={security.title} body={security.body} />
+      <ProvenanceSection title={provenance.title} body={provenance.body} records={provenance.records} />
+      <SecurityComplianceSection title={security.title} body={security.body} controls={security.controls} />
       <DeploymentOptionsSection title={deployment.title} body={deployment.body} options={deployment.options} />
-      {/* TODO: source copy not yet provided for /governance closing CTA */}
       <CTABand
-        title=""
+        title={cta.title}
         body=""
-        primaryCta={{ label: "Request a Demo", href: "/company/contact" }}
-        secondaryCta={{ label: "Explore Synthetix", href: "/platform" }}
+        primaryCta={{ label: cta.primary, href: "/company/contact" }}
       />
     </main>
   );

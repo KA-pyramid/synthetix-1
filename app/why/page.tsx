@@ -6,20 +6,36 @@ import { CTABand } from "@/components/sections/shared/CTABand";
 import { getWhyContent } from "@/lib/content/why";
 
 export default function WhyPage() {
-  const { hero, competitors, stakeholders, businessCase } = getWhyContent();
+  const { hero, competitors, stakeholders, businessCase, cta } = getWhyContent();
 
   return (
     <main>
       <WhyHero hero={hero} />
-      <CompetitorsSection title={competitors.title} body={competitors.body} />
-      <StakeholderValueSection title={stakeholders.title} body={stakeholders.body} />
-      <BusinessCaseSection title={businessCase.title} body={businessCase.body} />
-      {/* TODO: source copy not yet provided for /why closing CTA */}
+      <CompetitorsSection
+        title={competitors.title}
+        intro={competitors.intro}
+        tools={competitors.tools}
+        distinctTitle={competitors.distinctTitle}
+        distinctBody={competitors.distinctBody}
+        comparisonTable={competitors.comparisonTable}
+      />
+      <StakeholderValueSection
+        title={stakeholders.title}
+        intro={stakeholders.intro}
+        blocks={stakeholders.blocks}
+      />
+      <BusinessCaseSection
+        title={businessCase.title}
+        intro={businessCase.intro}
+        costDrivers={businessCase.costDrivers}
+        economicsTable={businessCase.economicsTable}
+        proofRunModel={businessCase.proofRunModel}
+        roiSummary={businessCase.roiSummary}
+      />
       <CTABand
-        title=""
-        body=""
-        primaryCta={{ label: "Request a Demo", href: "/company/contact" }}
-        secondaryCta={{ label: "Explore Synthetix", href: "/platform" }}
+        title={cta.title}
+        body={cta.body}
+        primaryCta={{ label: cta.primary, href: "/company/contact" }}
       />
     </main>
   );

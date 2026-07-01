@@ -1,5 +1,5 @@
 export interface WhyHeroProps {
-  hero: { eyebrow: string; title: string; body: string };
+  hero: { title: string; body: string };
 }
 
 export function WhyHero({ hero }: WhyHeroProps) {

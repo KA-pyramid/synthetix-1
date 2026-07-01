@@ -5,21 +5,20 @@ import { CTABand } from "@/components/sections/shared/CTABand";
 import { getAgentsContent } from "@/lib/content/agents";
 
 export default function AgentsPage() {
-  const { hero, agents } = getAgentsContent();
+  const { hero, workflowBand, agents, cta } = getAgentsContent();
 
   return (
     <main>
       <AgentsHero hero={hero} />
-      <WorkflowBand agents={agents} />
+      <WorkflowBand title={workflowBand.title} body={workflowBand.body} agents={agents} />
       {agents.map((agent) => (
         <AgentProfileSection key={agent.slug} agent={agent} />
       ))}
-      {/* TODO: source copy not yet provided for /agents closing CTA */}
       <CTABand
-        title=""
+        title={cta.title}
         body=""
-        primaryCta={{ label: "Request a Demo", href: "/company/contact" }}
-        secondaryCta={{ label: "Explore Synthetix", href: "/platform" }}
+        primaryCta={{ label: cta.primary, href: "/company/contact" }}
+        secondaryCta={{ label: cta.secondary, href: "/governance" }}
       />
     </main>
   );
