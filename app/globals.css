@@ -4,7 +4,7 @@
 
 :root {
   /* Primary */
-  --color-brand-black: #252122;
+  --color-brand-black: #0d1127;
   --color-graphite: #3a3436;
   --color-brand-blue: #0a47c9;
   --color-pro-blue: #3e7fe8;
@@ -15,8 +15,8 @@
 
   /* Gradients */
   --gradient-primary: linear-gradient(to right, #0a47c9, #3e7fe8, #3ac8d5);
-  --gradient-dark: linear-gradient(to right, #252122, #3a3436);
-  --gradient-hero: linear-gradient(135deg, #252122, #0a47c9, #3ac8d5);
+  --gradient-dark: linear-gradient(to right, #0d1127, #3a3436);
+  --gradient-hero: linear-gradient(135deg, #0d1127, #0a47c9, #3ac8d5);
 
   /* Neutrals */
   --neutral-900: #111111;
@@ -32,7 +32,7 @@
   --color-info: #3e7fe8;
 
   /* Typography colors */
-  --text-primary: #252122;
+  --text-primary: #0d1127;
   --text-secondary: #5f6368;
   --text-caption: #8e949a;
 }

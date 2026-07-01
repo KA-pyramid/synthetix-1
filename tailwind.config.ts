@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          black: "#252122",
+          black: "#0D1127",
           graphite: "#3A3436",
           blue: "#0A47C9",
           "blue-mid": "#3E7FE8",
@@ -37,8 +37,8 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-primary": "linear-gradient(to right, #0A47C9, #3E7FE8, #3AC8D5)",
-        "gradient-dark": "linear-gradient(to right, #252122, #3A3436)",
-        "gradient-hero": "linear-gradient(135deg, #252122, #0A47C9, #3AC8D5)",
+        "gradient-dark": "linear-gradient(to right, #0D1127, #3A3436)",
+        "gradient-hero": "linear-gradient(135deg, #0D1127, #0A47C9, #3AC8D5)",
       },
       keyframes: {
         marquee: {
