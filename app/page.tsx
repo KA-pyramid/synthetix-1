@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Shield,
   Brain,
@@ -26,6 +26,7 @@ import {
 import AnimatedHero from "@/components/ui/modern-animated-hero-section";
 import { SolutionsTabs } from "@/components/ui/feature-tabs";
 import { RadialOrbitalTimeline } from "@/components/ui/radial-orbital-timeline";
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -44,7 +45,7 @@ const STATS = [
   { value: 120, suffix: "+", label: "Reduction in legacy discovery effort" },
   { value: 100, suffix: "%", label: "Traceable artifacts, decisions, and gates" },
   { value: 24, suffix: "/7", label: "Continuous execution across the estate" },
-  { value: 9, suffix: "/10", label: "Decisions resolved autonomously", raw: "09/10" },
+  { value: 9, suffix: "/10", label: "Decisions resolved autonomously", padStart: 2 },
 ];
 
 const PLATFORM_CAPABILITIES = [
@@ -305,59 +306,6 @@ const FOOTER_COLUMNS = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Hooks                                                               */
-/* ------------------------------------------------------------------ */
-
-function useInView<T extends HTMLElement>() {
-  const ref = useRef<T | null>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.4 }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, inView };
-}
-
-function useCountUp(target: number, active: boolean, duration = 1400) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!active) return;
-    let start: number | null = null;
-    let frame: number;
-
-    const step = (timestamp: number) => {
-      if (start === null) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      setValue(Math.floor(progress * target));
-      if (progress < 1) {
-        frame = requestAnimationFrame(step);
-      } else {
-        setValue(target);
-      }
-    };
-
-    frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
-  }, [active, target, duration]);
-
-  return value;
-}
-
-/* ------------------------------------------------------------------ */
 /* Navbar                                                              */
 /* ------------------------------------------------------------------ */
 
@@ -459,19 +407,14 @@ function Hero() {
 /* ------------------------------------------------------------------ */
 
 function StatItem({ stat }: { stat: (typeof STATS)[number] }) {
-  const { ref, inView } = useInView<HTMLDivElement>();
-  const count = useCountUp(stat.value, inView);
-  const display = stat.raw
-    ? inView
-      ? stat.raw
-      : "00/10"
-    : `${count}${stat.suffix}`;
-
   return (
-    <div ref={ref} className="flex flex-col items-center px-6 py-8 text-center">
-      <span className="font-display text-4xl font-bold text-brand-blue md:text-5xl">
-        {display}
-      </span>
+    <div className="flex flex-col items-center px-6 py-8 text-center">
+      <NumberTicker
+        value={stat.value}
+        suffix={stat.suffix}
+        padStart={"padStart" in stat ? stat.padStart : 0}
+        className="font-display text-4xl text-brand-blue md:text-5xl"
+      />
       <span className="mt-2 font-body text-sm text-[--text-secondary]">
         {stat.label}
       </span>

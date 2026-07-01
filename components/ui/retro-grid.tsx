@@ -22,13 +22,13 @@ export function RetroGrid({
           className={cn(
             "animate-grid",
             "[background-repeat:repeat] [background-size:60px_60px] [height:300vh] [inset:0%_0px] [margin-left:-50%] [transform-origin:100%_0_0] [width:600vw]",
-            "[background-image:linear-gradient(to_right,rgba(103,220,228,0.25)_1px,transparent_0),linear-gradient(to_bottom,rgba(103,220,228,0.25)_1px,transparent_0)]"
+            "[background-image:linear-gradient(to_right,rgba(10,71,201,0.18)_1px,transparent_0),linear-gradient(to_bottom,rgba(10,71,201,0.18)_1px,transparent_0)]"
           )}
         />
       </div>
 
       {/* Background gradient fade */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-black to-transparent to-90%" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent to-90%" />
     </div>
   );
 }

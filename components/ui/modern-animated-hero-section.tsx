@@ -27,14 +27,14 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
   const words = title.split(" ").map((text) => ({ text }));
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-brand-black">
+    <div className="relative w-full min-h-screen overflow-hidden bg-white">
       {/* Retro grid backdrop */}
       <RetroGrid angle={65} />
 
       {/* Foreground content */}
       <div className="relative z-20 flex min-h-screen flex-col items-center justify-center px-6 text-center">
         {eyebrow && (
-          <span className="mb-6 inline-block rounded-full bg-brand-blue/20 px-4 py-1.5 font-body text-sm font-medium text-brand-blue-sky">
+          <span className="mb-6 inline-block rounded-full bg-brand-blue/10 px-4 py-1.5 font-body text-sm font-medium text-brand-blue">
             {eyebrow}
           </span>
         )}
@@ -42,12 +42,12 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
         <TypewriterEffectSmooth
           words={words}
           className="justify-center"
-          textClassName="max-w-full text-sm text-white sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl"
+          textClassName="max-w-full text-sm text-brand-black sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl"
           cursorClassName="h-5 sm:h-6 md:h-8 lg:h-10 xl:h-12"
         />
 
         {subtitle && (
-          <p className="mt-6 max-w-2xl font-body text-base text-neutral-200 md:text-lg">
+          <p className="mt-6 max-w-2xl font-body text-base text-[--text-secondary] md:text-lg">
             {subtitle}
           </p>
         )}
@@ -65,7 +65,7 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
             {secondaryCta && (
               <a
                 href={secondaryCta.href}
-                className="rounded-lg border border-white/30 px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:border-brand-cyan hover:text-brand-cyan"
+                className="rounded-lg border border-neutral-300 px-8 py-3.5 font-body text-sm font-semibold text-brand-black transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 {secondaryCta.label}
               </a>
