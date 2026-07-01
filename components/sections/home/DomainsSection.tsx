@@ -1,4 +1,7 @@
+"use client";
+
 import { getHomeContent } from "@/lib/content/home";
+import { FeatureAccordion } from "@/components/ui/feature-accordion";
 
 export function DomainsSection() {
   const { domainsHeading, platformCapabilities } = getHomeContent();
@@ -14,21 +17,7 @@ export function DomainsSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {platformCapabilities.map((cap) => (
-            <div key={cap.title} className="flex flex-col items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue/10">
-                <cap.icon className="h-6 w-6 text-brand-blue" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-brand-black">
-                {cap.title}
-              </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-[--text-secondary]">
-                {cap.body}
-              </p>
-            </div>
-          ))}
-        </div>
+        <FeatureAccordion items={platformCapabilities} />
       </div>
     </section>
   );

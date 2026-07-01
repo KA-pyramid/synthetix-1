@@ -49,10 +49,15 @@ const config: Config = {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "scale(0.92)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
       },
       animation: {
         marquee: "marquee 25s linear infinite",
         grid: "grid 15s linear infinite",
+        "fade-in": "fade-in 0.4s ease-in-out",
       },
     },
   },
