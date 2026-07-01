@@ -40,53 +40,6 @@ const STATS = [
   { value: 9, suffix: "/10", label: "Decisions resolved autonomously", raw: "09/10" },
 ];
 
-const SOLUTIONS = [
-  {
-    frame: "Imagine",
-    title: "Greenfield App Development",
-    body: "Synthetix agents interpret requirements, negotiate architecture, generate scaffolds, and verify output before it reaches your engineering teams.",
-    bullets: [
-      "Requirements for Architecture",
-      "Governed Code Generation",
-      "Automated Test Coverage",
-      "Release-Ready Components",
-    ],
-  },
-  {
-    frame: "Reimagine",
-    title: "Code Modernization",
-    body: "Agents analyze every line, map every dependency, and execute migration in parallel waves under full governance, without disrupting production systems.",
-    bullets: [
-      "Legacy Estate Analysis",
-      "Dependency and Risk Mapping",
-      "Parallel Migration Wave Execution",
-      "Evidence-Backed Architecture",
-    ],
-  },
-  {
-    frame: "Evolve",
-    title: "Application Support",
-    body: "Synthetix agents triage incidents, identify root causes, propose fixes, and refresh runbooks. They escalate to human reviewers only when judgment is required.",
-    bullets: [
-      "Incident Triage and RCA",
-      "Fix Proposal and Validation",
-      "Runbook and Documentation Refresh",
-      "L2/L3 Effort Reduction",
-    ],
-  },
-  {
-    frame: "Evolve",
-    title: "Infrastructure Support",
-    body: "From IaC comprehension to drift detection and change impact assessment, Synthetix governs every infrastructure remediation across cloud, hybrid, and on premises.",
-    bullets: [
-      "IaC and Topology Intelligence",
-      "Drift Detection and Alerting",
-      "Policy-Gated Change Control",
-      "Cross-Environment Remediation",
-    ],
-  },
-];
-
 const PLATFORM_CAPABILITIES = [
   {
     icon: Shield,
@@ -590,36 +543,6 @@ function Solutions() {
             AI-First Digital Engineering Platform with Governed Execution
             Layer
           </h2>
-        </div>
-
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {SOLUTIONS.map((card) => (
-            <div
-              key={card.title}
-              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:border-l-4 hover:border-l-brand-blue"
-            >
-              <span className="font-display text-sm italic text-brand-cyan">
-                {card.frame}
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-brand-black">
-                {card.title}
-              </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-[--text-secondary]">
-                {card.body}
-              </p>
-              <ul className="mt-5 space-y-2">
-                {card.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-start gap-2 font-body text-sm text-brand-black"
-                  >
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
 
         <SolutionsTabs />
