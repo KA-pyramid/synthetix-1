@@ -22,12 +22,20 @@ import {
   Hammer,
   ShieldCheck,
   Scale,
+  Workflow,
+  Compass,
+  Layers,
+  GraduationCap,
+  Calculator,
+  Eye,
+  Radar,
 } from "lucide-react";
 import Image from "next/image";
 import AnimatedHero from "@/components/ui/modern-animated-hero-section";
 import { SolutionsTabs } from "@/components/ui/feature-tabs";
 import { RadialOrbitalTimeline } from "@/components/ui/radial-orbital-timeline";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { ContainerScroll, CardSticky } from "@/components/ui/container-scroll";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -154,38 +162,47 @@ const SYNTHETIX_TRAITS = [
 const AGENTS = [
   {
     name: "Conductor",
+    icon: Workflow,
     body: "Portfolio orchestration across every module, every delivery state, and every business function from Discovered to Sealed.",
   },
   {
     name: "Cartographer",
+    icon: Compass,
     body: "Path-level comprehension of legacy code and IaC across Java, COBOL, VB6, PHP, Terraform and beyond.",
   },
   {
     name: "Architect",
+    icon: Layers,
     body: "Target-state architecture generation synthesized from verified estate intelligence, infrastructure footprint, and business intent.",
   },
   {
     name: "Examiner",
+    icon: ShieldCheck,
     body: "Native test generation and execution with coverage gating that reflects real system behavior across units, integration, and contract surfaces.",
   },
   {
     name: "Gatekeeper",
+    icon: Scale,
     body: "Four-tier change classification with promote-gate semantics, versioned, reversible, and fully audited for regulated industries.",
   },
   {
     name: "Mentor",
+    icon: GraduationCap,
     body: "Real-time guidance in the IDE that captures tribal knowledge as it is used and feeds it back into the platform.",
   },
   {
     name: "Estimator",
+    icon: Calculator,
     body: "Risk-adjusted timelines and work breakdowns your CFO and PMO can defend in the steering committee.",
   },
   {
     name: "Critic",
+    icon: Eye,
     body: "Inline review that catches hallucinations, scope drift, and unsafe migrations before anything reaches sign-off.",
   },
   {
     name: "Scout",
+    icon: Radar,
     body: "Evidence-grounded intelligence at the pace the engagement demands.",
   },
 ];
@@ -710,24 +727,55 @@ function AgentGrid() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {AGENTS.map((agent, i) => (
-            <div
-              key={agent.name}
-              className="relative rounded-2xl border border-neutral-200 border-t-2 border-t-transparent bg-white p-6 transition-colors hover:border-t-brand-cyan"
-            >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-blue font-body text-xs font-semibold text-white">
-                {i + 1}
+        <ContainerScroll className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,300px)_1fr] lg:gap-12">
+          <div className="hidden lg:block">
+            <div className="sticky top-24 rounded-2xl border border-neutral-200 bg-white p-8">
+              <span className="font-body text-xs font-semibold uppercase tracking-wider text-brand-blue">
+                01 – 09
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold text-brand-black">
-                {agent.name}
-              </h3>
-              <p className="mt-2 font-body text-sm text-[--text-secondary]">
-                {agent.body}
+              <p className="mt-4 font-body text-sm leading-relaxed text-[--text-secondary]">
+                Nine specialist agents, each scoped to a single accountable
+                function, coordinated by Conductor across discovery,
+                architecture, build, verification, and governance.
               </p>
             </div>
-          ))}
-        </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {AGENTS.map((agent, i) => {
+              const Icon = agent.icon;
+              return (
+                <CardSticky
+                  key={agent.name}
+                  index={i}
+                  incrementY={16}
+                  incrementZ={10}
+                  baseTop={96}
+                  className="min-h-[220px] rounded-2xl border border-neutral-200 border-t-2 border-t-transparent bg-white p-8 shadow-md transition-colors hover:border-t-brand-cyan"
+                >
+                  <div className="flex items-start gap-5">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-body text-xs font-semibold text-neutral-500">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="font-display text-lg font-semibold text-brand-black">
+                          {agent.name}
+                        </h3>
+                      </div>
+                      <p className="mt-2 font-body text-sm text-[--text-secondary]">
+                        {agent.body}
+                      </p>
+                    </div>
+                  </div>
+                </CardSticky>
+              );
+            })}
+          </div>
+        </ContainerScroll>
 
         <div className="mt-16 rounded-2xl bg-white px-8 py-12 text-center shadow-sm">
           <h3 className="font-display text-2xl font-bold text-brand-black">
