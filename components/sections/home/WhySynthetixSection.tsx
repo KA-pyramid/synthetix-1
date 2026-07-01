@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import { getHomeContent } from "@/lib/content/home";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 export function WhySynthetixSection() {
   const { whySynthetixHeading, otherAiTools, synthetixTraits } = getHomeContent();
@@ -50,12 +51,7 @@ export function WhySynthetixSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <a
-            href="#contact"
-            className="inline-block rounded-lg bg-brand-blue px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-brand-blue-mid"
-          >
-            Book a Demo
-          </a>
+          <InteractiveHoverButton href="#contact">Book a Demo</InteractiveHoverButton>
         </div>
       </div>
     </section>

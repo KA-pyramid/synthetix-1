@@ -3,6 +3,7 @@
 import type React from "react";
 import { RetroGrid } from "@/components/ui/retro-grid";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 interface CtaLink {
   label: string;
@@ -55,20 +56,14 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
         {(primaryCta || secondaryCta) && (
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             {primaryCta && (
-              <a
-                href={primaryCta.href}
-                className="rounded-lg bg-brand-blue px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-brand-blue-mid"
-              >
+              <InteractiveHoverButton href={primaryCta.href} variant="solid">
                 {primaryCta.label}
-              </a>
+              </InteractiveHoverButton>
             )}
             {secondaryCta && (
-              <a
-                href={secondaryCta.href}
-                className="rounded-lg border border-neutral-200 px-8 py-3.5 font-body text-sm font-semibold text-brand-black transition-colors hover:border-brand-blue hover:text-brand-blue"
-              >
+              <InteractiveHoverButton href={secondaryCta.href} variant="outline">
                 {secondaryCta.label}
-              </a>
+              </InteractiveHoverButton>
             )}
           </div>
         )}

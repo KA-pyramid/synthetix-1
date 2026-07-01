@@ -1,4 +1,5 @@
 import { getHomeContent } from "@/lib/content/home";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 export function CTASection() {
   const { ctaBand } = getHomeContent();
@@ -12,18 +13,12 @@ export function CTASection() {
           {ctaBand.body}
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <a
-            href={ctaBand.primaryCta.href}
-            className="rounded-lg bg-white px-8 py-3.5 font-body text-sm font-semibold text-brand-blue transition-opacity hover:opacity-90"
-          >
+          <InteractiveHoverButton href={ctaBand.primaryCta.href} variant="outline">
             {ctaBand.primaryCta.label}
-          </a>
-          <a
-            href={ctaBand.secondaryCta.href}
-            className="rounded-lg border border-white px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-white/10"
-          >
+          </InteractiveHoverButton>
+          <InteractiveHoverButton href={ctaBand.secondaryCta.href} variant="outline-inverse">
             {ctaBand.secondaryCta.label}
-          </a>
+          </InteractiveHoverButton>
         </div>
       </div>
     </section>

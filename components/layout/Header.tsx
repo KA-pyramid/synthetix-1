@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { getNavConfig } from "@/lib/content/nav";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 // Extracted from the original homepage Navbar — JSX/styling untouched.
 // Only the top 5 primary items are shown for now (Resources/Company mega
@@ -45,12 +46,9 @@ export function Header() {
         </div>
 
         <div className="hidden md:block">
-          <a
-            href="#contact"
-            className="rounded-lg bg-brand-blue px-5 py-2.5 font-body text-sm font-medium text-white transition-colors hover:bg-brand-blue-mid"
-          >
+          <InteractiveHoverButton href="#contact" className="px-5 py-2.5 font-medium">
             Request a Demo
-          </a>
+          </InteractiveHoverButton>
         </div>
 
         <button
@@ -75,12 +73,13 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a
+            <InteractiveHoverButton
               href="#contact"
-              className="rounded-lg bg-brand-blue px-5 py-2.5 text-center font-body text-sm font-medium text-white"
+              className="px-5 py-2.5 text-center font-medium"
+              onClick={() => setMobileOpen(false)}
             >
               Request a Demo
-            </a>
+            </InteractiveHoverButton>
           </div>
         </div>
       )}

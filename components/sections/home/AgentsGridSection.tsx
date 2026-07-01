@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { getHomeContent } from "@/lib/content/home";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 export function AgentsGridSection() {
   const { agentsGridHeading, agentsGridSidebar, agentsGridCta, agents } = getHomeContent();
@@ -107,12 +108,9 @@ export function AgentsGridSection() {
           <p className="mx-auto mt-3 max-w-xl font-body text-sm text-[--text-secondary]">
             {agentsGridCta.body}
           </p>
-          <a
-            href="#contact"
-            className="mt-6 inline-block rounded-lg bg-brand-blue px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-brand-blue-mid"
-          >
+          <InteractiveHoverButton href="#contact" className="mt-6">
             {agentsGridCta.ctaLabel}
-          </a>
+          </InteractiveHoverButton>
         </div>
       </div>
     </section>
