@@ -39,9 +39,14 @@ const config: Config = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-33.333%)" },
         },
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         marquee: "marquee 25s linear infinite",
+        grid: "grid 15s linear infinite",
       },
     },
   },

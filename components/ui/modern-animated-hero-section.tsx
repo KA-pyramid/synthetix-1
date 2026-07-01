@@ -2,6 +2,7 @@
 
 import type React from "react";
 import { useState, useEffect, useCallback, useRef } from "react";
+import { RetroGrid } from "@/components/ui/retro-grid";
 
 interface Character {
   char: string;
@@ -228,6 +229,9 @@ const RainingLetters: React.FC<RainingLettersProps> = ({
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-brand-black">
+      {/* Retro grid backdrop */}
+      <RetroGrid angle={65} />
+
       {/* Foreground content */}
       <div className="relative z-20 flex min-h-screen flex-col items-center justify-center px-6 text-center">
         {eyebrow && (
