@@ -32,9 +32,9 @@
   --color-info: #3e7fe8;
 
   /* Typography colors */
-  --text-primary: #01070f;
-  --text-secondary: #1a1f2b;
-  --text-caption: #5f6368;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-caption: #3a3436;
 }
 
 html {
