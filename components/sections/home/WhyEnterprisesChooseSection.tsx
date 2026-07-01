@@ -1,9 +1,12 @@
+"use client";
+
 import { getHomeContent } from "@/lib/content/home";
+import { DisplayCards } from "@/components/ui/display-cards";
 
 export function WhyEnterprisesChooseSection() {
   const { businessCaseHeading, businessCase } = getHomeContent();
   return (
-    <section className="bg-neutral-50 px-6 py-24">
+    <section className="overflow-hidden bg-neutral-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
           <span className="font-body text-sm font-semibold uppercase tracking-wide text-brand-blue">
@@ -14,23 +17,8 @@ export function WhyEnterprisesChooseSection() {
           </h2>
         </div>
 
-        <div className="mt-14 divide-y divide-neutral-200 rounded-2xl bg-white shadow-sm">
-          {businessCase.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col items-start gap-4 px-8 py-6 sm:flex-row sm:items-center"
-            >
-              <item.icon className="h-6 w-6 shrink-0 text-brand-blue" />
-              <div>
-                <h3 className="font-display text-base font-semibold text-brand-black">
-                  {item.title}
-                </h3>
-                <p className="mt-1 font-body text-sm text-[--text-secondary]">
-                  {item.body}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="mt-6 flex min-h-[27rem] items-center justify-center pl-10 sm:pl-16">
+          <DisplayCards items={businessCase} />
         </div>
       </div>
     </section>
