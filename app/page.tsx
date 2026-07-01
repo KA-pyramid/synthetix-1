@@ -23,7 +23,7 @@ import {
   ShieldCheck,
   Scale,
 } from "lucide-react";
-import RainingLettersHero from "@/components/ui/modern-animated-hero-section";
+import AnimatedHero from "@/components/ui/modern-animated-hero-section";
 import { SolutionsTabs } from "@/components/ui/feature-tabs";
 import { RadialOrbitalTimeline } from "@/components/ui/radial-orbital-timeline";
 
@@ -444,7 +444,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <RainingLettersHero
+    <AnimatedHero
       eyebrow="Governed Agentic Execution Platform"
       title="Govern Build Revamp Operate"
       subtitle="Synthetix is a governed agentic execution platform for enterprise software delivery. Specialist agents run discovery, architecture, build, verification, and governance as one coordinated pipeline with policy gates and human oversight at every critical juncture."
