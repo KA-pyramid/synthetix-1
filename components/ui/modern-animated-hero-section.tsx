@@ -65,7 +65,7 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
             {secondaryCta && (
               <a
                 href={secondaryCta.href}
-                className="rounded-lg border border-neutral-300 px-8 py-3.5 font-body text-sm font-semibold text-brand-black transition-colors hover:border-brand-blue hover:text-brand-blue"
+                className="rounded-lg border border-neutral-200 px-8 py-3.5 font-body text-sm font-semibold text-brand-black transition-colors hover:border-brand-blue hover:text-brand-blue"
               >
                 {secondaryCta.label}
               </a>

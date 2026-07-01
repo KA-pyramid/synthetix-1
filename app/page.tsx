@@ -23,6 +23,7 @@ import {
   ShieldCheck,
   Scale,
 } from "lucide-react";
+import Image from "next/image";
 import AnimatedHero from "@/components/ui/modern-animated-hero-section";
 import { SolutionsTabs } from "@/components/ui/feature-tabs";
 import { RadialOrbitalTimeline } from "@/components/ui/radial-orbital-timeline";
@@ -326,7 +327,8 @@ function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-display text-xl font-semibold text-brand-black">
+        <a href="#" className="flex items-center gap-2 font-display text-xl font-semibold text-brand-black">
+          <Image src="/logo-mark.png" alt="" width={32} height={24} className="h-6 w-auto" priority />
           Synthetix
         </a>
 
@@ -959,7 +961,8 @@ function Footer() {
     <footer className="bg-brand-black px-6 py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <span className="font-display text-xl font-semibold text-white">
+          <span className="flex items-center gap-2 font-display text-xl font-semibold text-white">
+            <Image src="/logo-mark.png" alt="" width={32} height={24} className="h-6 w-auto" />
             Synthetix
           </span>
           <p className="mt-3 font-body text-sm text-[--text-secondary]">

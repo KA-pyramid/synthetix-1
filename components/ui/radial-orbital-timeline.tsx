@@ -104,7 +104,7 @@ export function RadialOrbitalTimeline({ items }: { items: OrbitalItem[] }) {
                     ? "scale-150 border-brand-aqua bg-white text-brand-black shadow-lg shadow-brand-aqua/30"
                     : isRelated
                     ? "animate-pulse border-brand-aqua bg-brand-aqua/20 text-brand-blue"
-                    : "border-neutral-300 bg-white text-brand-black"
+                    : "border-neutral-200 bg-white text-brand-black"
                 }`}
               >
                 <Icon size={16} />
@@ -155,7 +155,7 @@ export function RadialOrbitalTimeline({ items }: { items: OrbitalItem[] }) {
                           e.stopPropagation();
                           selectItem(relId);
                         }}
-                        className="flex items-center rounded-md border border-neutral-200 bg-white px-2 py-1 font-body text-xs text-[--text-secondary] transition-all hover:bg-neutral-100 hover:text-brand-black"
+                        className="flex items-center rounded-md border border-neutral-200 bg-white px-2 py-1 font-body text-xs text-[--text-secondary] transition-all hover:bg-neutral-50 hover:text-brand-black"
                       >
                         {related == null ? relId : related.title}
                       </button>
@@ -166,7 +166,7 @@ export function RadialOrbitalTimeline({ items }: { items: OrbitalItem[] }) {
             )}
           </div>
         ) : (
-          <p className="text-center font-body text-sm text-neutral-400">
+          <p className="text-center font-body text-sm text-neutral-500">
             Select a stage to see how it fits the governed pipeline.
           </p>
         )}

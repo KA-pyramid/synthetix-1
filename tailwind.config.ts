@@ -24,6 +24,12 @@ const config: Config = {
           200: "#D9D9D9",
           50: "#F5F7FA",
         },
+        semantic: {
+          success: "#10B981",
+          warning: "#F59E0B",
+          danger: "#EF4444",
+          info: "#3E7FE8",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)"],
