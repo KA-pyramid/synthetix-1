@@ -18,6 +18,7 @@ import {
   Menu,
 } from "lucide-react";
 import RainingLettersHero from "@/components/ui/modern-animated-hero-section";
+import { SolutionsTabs } from "@/components/ui/feature-tabs";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -620,6 +621,8 @@ function Solutions() {
             </div>
           ))}
         </div>
+
+        <SolutionsTabs />
       </div>
     </section>
   );
