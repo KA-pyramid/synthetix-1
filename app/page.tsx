@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Menu,
 } from "lucide-react";
+import RainingLettersHero from "@/components/ui/modern-animated-hero-section";
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -458,39 +459,13 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="bg-white px-6 py-24 md:py-32">
-      <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-        <span className="mb-6 inline-block rounded-full bg-brand-blue/10 px-4 py-1.5 font-body text-sm font-medium text-brand-blue">
-          Governed Agentic Execution Platform
-        </span>
-
-        <h1 className="bg-gradient-hero bg-clip-text font-display text-4xl font-bold uppercase tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl">
-          Govern Build Revamp Operate
-        </h1>
-
-        <p className="mt-6 max-w-2xl font-body text-base text-[--text-secondary] md:text-lg">
-          Synthetix is a governed agentic execution platform for enterprise
-          software delivery. Specialist agents run discovery, architecture,
-          build, verification, and governance as one coordinated pipeline
-          with policy gates and human oversight at every critical juncture.
-        </p>
-
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            className="rounded-lg bg-brand-blue px-8 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-brand-blue-mid"
-          >
-            Request a Demo
-          </a>
-          <a
-            href="#platform"
-            className="rounded-lg border border-neutral-200 px-8 py-3.5 font-body text-sm font-semibold text-brand-black transition-colors hover:border-brand-blue hover:text-brand-blue"
-          >
-            Explore Synthetix
-          </a>
-        </div>
-      </div>
-    </section>
+    <RainingLettersHero
+      eyebrow="Governed Agentic Execution Platform"
+      title="Govern Build Revamp Operate"
+      subtitle="Synthetix is a governed agentic execution platform for enterprise software delivery. Specialist agents run discovery, architecture, build, verification, and governance as one coordinated pipeline with policy gates and human oversight at every critical juncture."
+      primaryCta={{ label: "Request a Demo", href: "#contact" }}
+      secondaryCta={{ label: "Explore Synthetix", href: "#platform" }}
+    />
   );
 }
 
